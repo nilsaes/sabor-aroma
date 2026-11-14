@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nombre": "Sabor & Aroma Centro", "direccion": "Av. Mariscal López 1234, Asunción", "horario": "Lunes a Domingo: 08:00 a 23:00", "telefono": "+595 21 123 456" },
+  { "id": 2, "nombre": "Sabor & Aroma Villa Morra", "direccion": "Calle Senador Long 567, Villa Morra", "horario": "Lunes a Sábado: 09:00 a 22:00", "telefono": "+595 21 234 567" },
+  { "id": 3, "nombre": "Sabor & Aroma San Lorenzo", "direccion": "Ruta Mcal. Estigarribia km 12, San Lorenzo", "horario": "Martes a Domingo: 10:00 a 22:30", "telefono": "+595 21 345 678" }
+]

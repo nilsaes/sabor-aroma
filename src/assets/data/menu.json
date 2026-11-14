@@ -1,0 +1,146 @@
+{
+  "categorias": [
+    {
+      "id": "hamburguesas",
+      "nombre": "Hamburguesas"
+    },
+    {
+      "id": "pizzas",
+      "nombre": "Pizzas"
+    },
+    {
+      "id": "comidas",
+      "nombre": "Comidas"
+    },
+    {
+      "id": "postres",
+      "nombre": "Postres"
+    },
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Clásica Sabor",
+      "descripcion": "Carne de res, queso cheddar, lechuga, tomate y salsa de la casa.",
+      "precio": 28000,
+      "categoria": "hamburguesas",
+      "imagen": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 2,
+      "nombre": "Doble Cheddar",
+      "descripcion": "Doble carne, doble queso cheddar y cebolla caramelizada.",
+      "precio": 36000,
+      "categoria": "hamburguesas",
+      "imagen": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 3,
+      "nombre": "Bacon Crujiente",
+      "descripcion": "Carne jugosa con panceta crocante, queso y salsa barbacoa.",
+      "precio": 34000,
+      "categoria": "hamburguesas",
+      "imagen": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 4,
+      "nombre": "Margherita",
+      "descripcion": "Salsa de tomate, mozzarella fresca y albahaca.",
+      "precio": 45000,
+      "categoria": "pizzas",
+      "imagen": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 5,
+      "nombre": "Pepperoni",
+      "descripcion": "Mozzarella y generosas rodajas de pepperoni.",
+      "precio": 52000,
+      "categoria": "pizzas",
+      "imagen": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 6,
+      "nombre": "Cuatro Quesos",
+      "descripcion": "Mozzarella, parmesano, gorgonzola y provolone.",
+      "precio": 55000,
+      "categoria": "pizzas",
+      "imagen": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 7,
+      "nombre": "Ensalada Fresca",
+      "descripcion": "Mix de hojas verdes, tomate cherry, palta y aderezo cítrico.",
+      "precio": 26000,
+      "categoria": "comidas",
+      "imagen": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 8,
+      "nombre": "Brochetas a la Parrilla",
+      "descripcion": "Brochetas de carne y vegetales asados al carbón.",
+      "precio": 42000,
+      "categoria": "comidas",
+      "imagen": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 9,
+      "nombre": "Pasta Cremosa",
+      "descripcion": "Pasta con salsa cremosa de champiñones y parmesano.",
+      "precio": 38000,
+      "categoria": "comidas",
+      "imagen": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 10,
+      "nombre": "Torta de Chocolate",
+      "descripcion": "Bizcocho húmedo de chocolate con cobertura de ganache.",
+      "precio": 22000,
+      "categoria": "postres",
+      "imagen": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 11,
+      "nombre": "Donas Glaseadas",
+      "descripcion": "Tres donas artesanales con glaseado y toppings.",
+      "precio": 18000,
+      "categoria": "postres",
+      "imagen": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 12,
+      "nombre": "Helado Artesanal",
+      "descripcion": "Dos bochas de helado con salsa a elección.",
+      "precio": 16000,
+      "categoria": "postres",
+      "imagen": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 13,
+      "nombre": "Café Latte",
+      "descripcion": "Espresso doble con leche vaporizada y arte latte.",
+      "precio": 14000,
+      "categoria": "bebidas",
+      "imagen": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 14,
+      "nombre": "Cóctel de la Casa",
+      "descripcion": "Cóctel refrescante con frutas de estación.",
+      "precio": 24000,
+      "categoria": "bebidas",
+      "imagen": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=70"
+    },
+    {
+      "id": 15,
+      "nombre": "Limonada con Menta",
+      "descripcion": "Limonada natural batida con hojas de menta.",
+      "precio": 12000,
+      "categoria": "bebidas",
+      "imagen": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=70"
+    }
+  ]
+}
