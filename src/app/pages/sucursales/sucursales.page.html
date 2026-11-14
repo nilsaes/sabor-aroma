@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-app">Sucursales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (cargando()) {
+    <div class="centro"><ion-spinner name="crescent" color="primary"></ion-spinner><p>Cargando sucursales...</p></div>
+    <ion-skeleton-text [animated]="true" class="sk"></ion-skeleton-text>
+    <ion-skeleton-text [animated]="true" class="sk"></ion-skeleton-text>
+  } @else if (error()) {
+    <div class="centro">
+      <ion-icon name="alert-circle-outline" class="grande"></ion-icon>
+      <p>{{ error() }}</p>
+      <ion-button (click)="cargar()"><ion-icon slot="start" name="refresh-outline"></ion-icon>Reintentar</ion-button>
+    </div>
+  } @else if (sucursales().length === 0) {
+    <div class="centro"><p>No hay sucursales disponibles por el momento.</p></div>
+  } @else {
+    <ion-accordion-group class="grupo" [multiple]="false">
+      @for (s of sucursales(); track s.id) {
+        <ion-accordion [value]="s.id">
+          <ion-item slot="header" color="light">
+            <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
+            <ion-label>{{ s.nombre }}</ion-label>
+          </ion-item>
+          <div slot="content" class="detalle">
+            <p><ion-icon name="location-outline"></ion-icon> {{ s.direccion }}</p>
+            <p><ion-icon name="time-outline"></ion-icon> {{ s.horario }}</p>
+            <p><ion-icon name="call-outline"></ion-icon> <a [href]="'tel:' + s.telefono">{{ s.telefono }}</a></p>
+          </div>
+        </ion-accordion>
+      }
+    </ion-accordion-group>
+  }
+</ion-content>
