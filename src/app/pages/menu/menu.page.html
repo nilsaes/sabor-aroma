@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-app">Sabor &amp; Aroma</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar en el menú" [debounce]="250" (ionInput)="alBuscar($event)"></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [scrollable]="true" [value]="categoriaActiva()" (ionChange)="alCambiarCategoria($event)">
+      <ion-segment-button value="todos"><ion-label>Todos</ion-label></ion-segment-button>
+      @for (c of categorias(); track c.id) {
+        <ion-segment-button [value]="c.id"><ion-label>{{ c.nombre }}</ion-label></ion-segment-button>
+      }
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (cargando()) {
+    <div class="centro"><ion-spinner name="crescent" color="primary"></ion-spinner><p>Cargando menú...</p></div>
+    @for (n of esqueletos; track n) {
+      <ion-card>
+        <ion-skeleton-text [animated]="true" class="sk-img"></ion-skeleton-text>
+        <ion-card-content>
+          <ion-skeleton-text [animated]="true" style="width: 60%"></ion-skeleton-text>
+          <ion-skeleton-text [animated]="true" style="width: 90%"></ion-skeleton-text>
+        </ion-card-content>
+      </ion-card>
+    }
+  } @else if (error()) {
+    <div class="centro">
+      <ion-icon name="alert-circle-outline" class="grande"></ion-icon>
+      <p>{{ error() }}</p>
+      <ion-button (click)="cargar()"><ion-icon slot="start" name="refresh-outline"></ion-icon>Reintentar</ion-button>
+    </div>
+  } @else if (filtrados().length === 0) {
+    <div class="centro">
+      <ion-icon name="fast-food-outline" class="grande"></ion-icon>
+      <p>No hay productos disponibles para tu búsqueda.</p>
+    </div>
+  } @else {
+    @for (p of filtrados(); track p.id) {
+      <ion-card class="producto">
+        @if (imagenesFallidas().includes(p.id)) {
+          <div class="img-fallo"><ion-icon name="fast-food-outline"></ion-icon></div>
+        } @else {
+          <ion-img [src]="p.imagen" [alt]="p.nombre" (ionError)="falloImagen(p.id)"></ion-img>
+        }
+        <ion-card-header>
+          <ion-badge color="secondary">{{ nombreCategoria(p.categoria) }}</ion-badge>
+          <ion-card-title>{{ p.nombre }}</ion-card-title>
+          <ion-card-subtitle>Gs. {{ p.precio.toLocaleString('es-PY') }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{ p.descripcion }}
+          <ion-button expand="block" (click)="agregar(p)">
+            <ion-icon slot="start" name="add-circle-outline"></ion-icon>Agregar al pedido
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    }
+  }
+</ion-content>
