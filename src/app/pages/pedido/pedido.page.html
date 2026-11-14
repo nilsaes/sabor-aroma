@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-app">Mi pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (pedido.items().length === 0) {
+    <div class="centro">
+      <ion-icon name="cart-outline" class="grande"></ion-icon>
+      <h3>Tu pedido está vacío</h3>
+      <p>Agrega productos desde la pestaña Menú.</p>
+    </div>
+  } @else {
+    @for (i of pedido.items(); track i.producto.id) {
+      <ion-card>
+        <ion-card-content>
+          <div class="fila">
+            <div class="info">
+              <strong>{{ i.producto.nombre }}</strong>
+              <span class="precio">Gs. {{ i.producto.precio.toLocaleString('es-PY') }} c/u</span>
+            </div>
+            <ion-button fill="clear" color="danger" (click)="eliminar(i)" aria-label="Eliminar producto">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+          <div class="fila">
+            <div class="cantidad">
+              <ion-button size="small" fill="outline" [disabled]="i.cantidad <= 1" (click)="pedido.disminuir(i.producto.id)" aria-label="Disminuir">
+                <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+              </ion-button>
+              <ion-badge color="secondary">{{ i.cantidad }}</ion-badge>
+              <ion-button size="small" fill="outline" (click)="pedido.aumentar(i.producto.id)" aria-label="Aumentar">
+                <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+              </ion-button>
+            </div>
+            <strong class="subtotal">Gs. {{ subtotal(i).toLocaleString('es-PY') }}</strong>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    }
+
+    <div class="resumen">
+      <div class="total"><span>Total</span><strong>Gs. {{ pedido.total().toLocaleString('es-PY') }}</strong></div>
+      <ion-button expand="block" color="medium" fill="outline" (click)="confirmarVaciar()">Vaciar pedido</ion-button>
+    </div>
+  }
+</ion-content>
